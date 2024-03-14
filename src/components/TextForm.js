@@ -7,30 +7,43 @@ export default function TextForm(props) {//using props to dynamically change val
         //console.log("Set text to uppercase" + text);
         let upperCaseText = text.toUpperCase();
         setText(upperCaseText);
+        props.showAlert("Converted to upper case!","success");
     }
     const handleLowerCaseText=()=>{ //sets text to lowercase
         //console.log("Set text to uppercase" + text);
         let lowerCaseText = text.toLowerCase();
         setText(lowerCaseText);
+        props.showAlert("Converted to lower case!","success");
     }
     const handleClearText=()=>{ //clears all text
         //console.log("Set text to uppercase" + text);
         let newText = "";
         setText(newText);
+        props.showAlert("Cleared all text!","success");
     }
     const handleCopyText=()=>{ //Copies text to clipboard
         var text = document.getElementById("myTextBox");
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied text to clipboard!","success");
     }
     const handleExtraSpaces=()=>{
-        let newText  = text.split(/[ ]+/);
+        let newText = text.split(" ");
         setText(newText.join(" "))
+        props.showAlert("Cleared all extra spaces!","success");
     }
     const handleOnChange=(event)=>{ //listens to any change in the text
         //console.log("text was changed");
         setText(event.target.value);
     }
+    const countWords = (text) =>{
+        let words;
+        if( text===" " || text.length === 0)
+          words = 0;
+        else
+          words = text.trim().split(/\s+/).length;
+        return words;
+      }
 
     return (
         <>
@@ -48,7 +61,7 @@ export default function TextForm(props) {//using props to dynamically change val
             </div>
             <div className="container my-4">
                 <h3>Your Text Summary</h3>
-                <p>{text.split(" ").length} words and {text.length} characters</p>
+                <p>{countWords(text)} words and {text.length} characters</p>
                 <p>{0.008*text.split(" ").length} Minutes read</p>
                 <p>{text === text.length > 0 ? text:"Enter any text in the text box above to preview to here"}</p>
             </div>

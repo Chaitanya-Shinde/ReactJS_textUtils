@@ -1,0 +1,9 @@
+.dropdown-menu.show{
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    height:140px;
+    align-items:center;
+    min-width:auto
+}
