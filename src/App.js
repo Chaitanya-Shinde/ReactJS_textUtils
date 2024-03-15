@@ -47,10 +47,9 @@ function App() {
       <div className="container my-3">
         <Routes>
           <Route exact path='/' element={
-            
             <TextForm heading="Enter your text in the box below" mode={mode} showAlert={showAlert}/>
-            
-          }/>
+          }
+          />
           <Route exact path='/about' element={<About/>}/>      
         </Routes>
         </div>

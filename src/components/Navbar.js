@@ -28,7 +28,7 @@ export default function Navbar(props) { //imported navbar from bootstrap
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
             <button className="btn btn-success" type="submit">Search</button>
           </form>
-          <div className="dropdown" >
+          <div className="dropdown my-1 mx-2" >
             <button className="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" 
             style={{
                 backgroundColor: `${props.mode==='light'?'#198754':'white'}`, 
@@ -46,7 +46,7 @@ export default function Navbar(props) { //imported navbar from bootstrap
               <li><button className="dropdown-item" href="#" style={{height: "30px", width:'30px', backgroundColor:'lightGrey', borderStyle:'solid',borderRadius:'4px',borderWidth:'0.5px'}}></button></li>
             </ul>
           </div>
-          <div className="form-check form-switch mx-3" >
+          <div className="form-check form-switch mx-2 my-1" >
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault" style={{color: `${props.mode==='light'?'black':'white'}`}}>Dark Mode</label>
           </div>
